@@ -13,31 +13,57 @@ getMovies().then((movies) => {
     // console.log(`id#${id} - ${title} - rating: ${rating}`);
     $("#movieList").append(` </br>  id#${id} - ${title} - rating: ${rating}   `);
 
-  });
+  })
 }).catch((error) => {
-  alert('Oh no! Something went wrong.\nCheck the console for details.')
+  alert('Oh no! Something went wrong.\nCheck the console for details.');
   console.log(error);
 });
+// api key fe20f474
+$("#titleSearch").keyup(function () {
+  var keyPress = this.value;
+  console.log(keyPress);
+  var url = "http://www.omdbapi.com/?apikey=fe20f474&s=" + keyPress;
+  $.get(url)
+      .done(function (data) {
+        console.log(data);
+        // var searchInput = $('#titleSearch');
+        var results = data.Search;
+
+        results.forEach(({Title}, {Poster}) => {
+          console.log({Poster});
+          $('#movieListFromSearch').empty().append(`<span id="data.Search">${Poster}   ${Title} </span>`);
+        })
+      })
+})
+
+
+
+
+
+
+
+
+
 
 // Post new movie
 
 
-const newMovie = {title: 'Animal House', rating: '9'};
+// const newMovie = {title: 'Animal House', rating: '9'};
 
-postMovie(newMovie);
 
-const moviePost = {title: 'Ajax Requests', body: 'Are a fun way to use JS!'};
-const url = '/posts';
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(moviePost),
-};
-fetch(url, options)
-    .then(/* post was created successfully */)
-    .catch(/* handle errors */);
+// const moviePost = {title: 'Ajax Requests', body: 'Are a fun way to use JS!'};
+// const url = '/posts';
+// const options = {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(moviePost),
+// }
+
+// fetch(url, options)
+//     .then(/* post was created successfully */)
+//     .catch(/* handle errors */);
 //------------------------------Autocomplete Script------------------------------//
 // function autocomplete(inp, arr) {
 //   /*the autocomplete function takes two arguments,
@@ -163,7 +189,7 @@ fetch(url, options)
 //     }
 //   });
 
-var url = "http://www.omdbapi.com/?i=tt3896198&apikey=1b3199ec&s=" + dInput;
-$.ajax(url).done
+// var url = "http://www.omdbapi.com/?i=tt3896198&apikey=1b3199ec&s=" + dInput;
+// $.ajax(url).done
 
-}
+
