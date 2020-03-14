@@ -37,10 +37,9 @@ module.exports = {
   omdbList: (searchString) => { // Pulls a list of 10 itesm from online movie database to populate auto-complete
     // http://www.omdbapi.com/?s= "string" &apikey=1b3199ec  (http://www.omdbapi.com/?s=happy+gilmore&apikey=1b3199ec)
     let omdbListurl = `http://www.omdbapi.com/?s=` + searchString + OMDBkey;
-    console.log(OMDBkey);
     return fetch(omdbListurl)
         .then(response => response.json())
-  }
+    }
 };
 
 // http://www.omdbapi.com/?i= "IMDB ID" &apikey=1b3199ec (http://www.omdbapi.com/?i=tt3896198&apikey=1b3199ec)
