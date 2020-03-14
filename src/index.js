@@ -1,40 +1,58 @@
-var $ = require("jquery");
+
 
 const {getMovies} = require('./api.js');
 const {postMovie} = require('./api.js');
 const {editMovie} = require('./api.js');
 const {deleteMovie} = require('./api.js');
+const {omdbList} = require('./api.js');
 
 
-
-getMovies().then((movies) => {
+getMovies().then((movies) => { // Get list of movies from db.json
   console.log('Here are all the movies:');
   movies.forEach(({title, rating, id}) => {
     // console.log(`id#${id} - ${title} - rating: ${rating}`);
     $("#movieList").append(` </br>  id#${id} - ${title} - rating: ${rating}   `);
-
   })
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
   console.log(error);
 });
-// api key fe20f474
-$("#titleSearch").keyup(function () {
-  var keyPress = this.value;
-  console.log(keyPress);
-  var url = "http://www.omdbapi.com/?apikey=fe20f474&s=" + keyPress;
-  $.get(url)
-      .done(function (data) {
-        console.log(data);
-        // var searchInput = $('#titleSearch');
-        var results = data.Search;
 
-        results.forEach(({Title}, {Poster}) => {
-          console.log({Poster});
-          $('#movieListFromSearch').empty().append(`<span id="data.Search">${Poster}   ${Title} </span>`);
-        })
-      })
-})
+
+
+omdbList("matrix").then((data) => {
+  let autoList = data.Search.forEach(({Title, Year, imdbID, Type, Poster}) => {
+
+  })
+});
+
+
+
+
+
+// Or with jQuery
+
+
+
+
+
+// api key fe20f474
+// $("#titleSearch").keyup(function () {
+//   var keyPress = this.value;
+//   console.log(keyPress);
+//   var url = "http://www.omdbapi.com/?apikey=fe20f474&s=" + keyPress;
+//   $.get(url)
+//       .done(function (data) {
+//         console.log(data);
+//         // var searchInput = $('#titleSearch');
+//         var results = data.Search;
+//
+//         results.forEach(({Title}, {Poster}) => {
+//           console.log({Poster});
+//           $('#movieListFromSearch').empty().append(`<span id="data.Search">${Poster}   ${Title} </span>`);
+//         })
+//       })
+// })
 
 
 
