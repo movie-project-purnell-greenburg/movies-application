@@ -1,4 +1,5 @@
 var $ = require("jquery");
+require("jquery-modal");
 
 const {getMovies} = require('./api.js');
 const {postMovie} = require('./api.js');
@@ -18,24 +19,95 @@ getMovies().then((movies) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
   console.log(error);
 });
+
+
 // api key fe20f474
 $("#titleSearch").keyup(function () {
   var keyPress = this.value;
+  $('#searchInput').append('<div id="autocompleteWrapper"></div>\n')
   console.log(keyPress);
-  var url = "http://www.omdbapi.com/?apikey=fe20f474&s=" + keyPress;
+  var url = "http://www.omdbapi.com/?apikey=1b3199ec&s=" + keyPress;
   $.get(url)
       .done(function (data) {
-        console.log(data);
-        // var searchInput = $('#titleSearch');
-        var results = data.Search;
+          console.log(data);
+          var results = data.Search;
+        var movieList = [];
+        results.forEach(({Title, Poster, imdbID}) => {
 
-        results.forEach(({Title}, {Poster}) => {
-          console.log({Poster});
-          $('#movieListFromSearch').empty().append(`<span id="data.Search">${Poster}   ${Title} </span>`);
-        })
+            var displayPoster = `<img class="moviePoster" style="" src="${Poster}">`;
+            if(Poster === "N/A"){
+                displayPoster = `<div class="noPoster"><small>No Poster Available</small></div>`;
+            }
+            movieList.push(`<a href="#movieDetails" rel="modal:open" class="listingItemContainer" id="${imdbID}"> ${displayPoster}
+                            <div class="titleTextList"> ${Title} </div> </a>`);
+        });
+          $('#autocompleteWrapper').html(movieList);
+
+          $('.listingItemContainer').on('click', function () {
+              var imdbLink = $(this).attr("id"); // assigns imdb ID to var to plug into search
+              $('#autocompleteWrapper').remove(); // removes the autocomplete div
+              console.log(imdbLink);
+              // < open add movie confirm>
+              addMovieModal(imdbLink);
+          })
       })
-})
+});
 
+
+const addMovieModal = (imdbData) => {
+    let searchLink = "http://www.omdbapi.com/?apikey=1b3199ec&i=" + imdbData;
+    // Open modal div
+    $('#manual-ajax').click(function(event) {
+        event.preventDefault();
+        // this.blur(); // Manually remove focus from clicked link.
+        $.get(this.href, function(html) {
+            $(html).appendTo('body').modal();
+        });
+    });
+    // display loading animation
+    // pull all omdb data
+    // loading complete, kill loading
+    $.get(searchLink)
+        .done((d)=>{
+            console.log(d);
+            var newMovieBucket = {
+                title: d.Title,
+                year: d.Year,
+                rated: d.Rated,
+                ratings: d.Ratings,
+                poster: "<img src=" + d.Poster + "\" alt='Movie Poster' >",
+                director: d.Director,
+                actors: d.Actors,
+                released: d.Released,
+                runtime: d.Runtime
+            };
+
+
+            $('#movieDetails').html(`<h2 style="display:inline">${d.Title}</h2> 
+<div style="font-weight:lighter; display:inline; float:right;">${d.Year} | ${d.Rated} | ${d.Ratings[0].Value}</div><hr>
+            <div class="parent">
+            <div class="div1"> <img src="${d.Poster}" alt="Movie Poster"> </div>
+            <div class="div2">  </div>
+            <div class="div3">
+            <p>${d.Plot}</p> 
+            <p> Director: ${d.Director}</p>
+            <p> Actors: ${d.Actors}</p>
+            <p> Release Date: ${d.Released}</p>
+            <p> Runtime: ${d.Runtime}</p>
+            </div>
+            <a href="#" rel="modal:close"><button>Cancel</button></a>
+            <button id="addMovieButton" style="float:right"><em>ADD MOVIE</em></button>
+            </div>`);
+
+            $('#addMovieButton').click(function () {
+                postMovie(newMovieBucket);
+                $('.modal').remove();
+                // then go to page display of movie
+            })
+
+        })
+};
+// modal test
 
 
 
