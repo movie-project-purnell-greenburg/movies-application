@@ -1,54 +1,30 @@
 {
   "movies": [
     {
-      "title": "Star Wars: Episode IV - A New Hope",
-      "year": "1977",
-      "rated": "PG",
+      "title": "Cool Hand Luke",
+      "year": "1967",
+      "rated": "GP",
       "ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "8.6/10"
+          "Value": "8.1/10"
         },
         {
           "Source": "Rotten Tomatoes",
-          "Value": "92%"
+          "Value": "100%"
         },
         {
           "Source": "Metacritic",
-          "Value": "90/100"
+          "Value": "91/100"
         }
       ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "George Lucas",
-      "actors": "Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing",
-      "released": "25 May 1977",
-      "runtime": "121 min",
-      "id": 2
-    },
-    {
-      "title": "The Lord of the Rings: The Fellowship of the Ring",
-      "year": "2001",
-      "rated": "PG-13",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.8/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "91%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "92/100"
-        }
-      ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "Peter Jackson",
-      "actors": "Alan Howard, Noel Appleby, Sean Astin, Sala Baker",
-      "released": "19 Dec 2001",
-      "runtime": "178 min",
-      "id": 3
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BOWFlNzZhYmYtYTI5YS00MDQyLWIyNTUtNTRjMWUwNTEzNjA0XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Stuart Rosenberg",
+      "actors": "Paul Newman, George Kennedy, J.D. Cannon, Lou Antonio",
+      "released": "01 Nov 1967",
+      "runtime": "127 min",
+      "imdbid": "tt0061512",
+      "id": 7
     }
   ]
 }
