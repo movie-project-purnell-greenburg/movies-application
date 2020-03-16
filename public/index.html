@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <style>
         html, body, pre, code, kbd, samp, h1{
             font-family: 'Press Start 2P', cursive;
@@ -22,9 +22,38 @@
         <span class="navbar-brand mb-5 h1">Moviepedia</span>
     </nav>
 </header>
+<h2>Moviepedia</h2>
+<p>Title Search:</p>
+<div id="searchInput" style="width:300px;">
+    <input class="autocomplete" id="titleSearch" type="text" placeholder="Search by Title">
+</div>
+
+
+<!-- Modal for adding movie -->
+<!--<div id="movieDetails" class="modal">-->
+<!--    <p>Thanks for clicking. That felt good.</p>-->
+
+<!--</div>-->
 
 <!-----------------8-Bit Spinner------------------->
 <!--<div  id="mainDisplay">-->
+
+<!--Make sure the form has the autocomplete function switched off:-->
+<form autocomplete="off">
+    <div class="autocomplete" style="width:300px;">
+        <input id="movie-title" type="text" name="myMovies" placeholder="Search your favorite">
+    </div>
+    <input type="submit">
+</form>
+<!--<form autocomplete="off">-->
+<!--    <div class="autotcomplete" style="width: 300px">-->
+<!--    <label for="movie-title">Name of movie</label>-->
+<!--    <input type="text" id="movie-title" placeholder="Movie Titles">-->
+<!--    <label for="movie-rating">Rating of movie</label>-->
+<!--    <input type="text" id="movie-rating" placeholder="Movie Ratings">-->
+<!--    </div>-->
+<!--    <button type="submit" id="add-movie" class="btn btn-primary">Submit</button>-->
+<!--</form>-->
 
 <table class="table">
     <thead>
@@ -47,25 +76,6 @@
     </tr>
     </tbody>
 </table>
-
-<!--Make sure the form has the autocomplete function switched off:-->
-<form autocomplete="off">
-    <div class="autocomplete" style="width:300px;">
-        <input id="movie-title" type="text" name="myMovies" placeholder="Search your favorite">
-    </div>
-    <input type="submit">
-</form>
-<!--<form autocomplete="off">-->
-<!--    <div class="autotcomplete" style="width: 300px">-->
-<!--    <label for="movie-title">Name of movie</label>-->
-<!--    <input type="text" id="movie-title" placeholder="Movie Titles">-->
-<!--    <label for="movie-rating">Rating of movie</label>-->
-<!--    <input type="text" id="movie-rating" placeholder="Movie Ratings">-->
-<!--    </div>-->
-<!--    <button type="submit" id="add-movie" class="btn btn-primary">Submit</button>-->
-<!--</form>-->
-
-
 
 <script type="text/javascript" src="main.js"></script>
 </body>
