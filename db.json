@@ -2,23 +2,43 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "6",
+      "rating": "4",
       "id": 1
     },
     {
-      "title": "The Matrix",
-      "rating": "4",
+      "title": "Star Wars: A New Hope",
+      "rating": "5",
       "id": 2
     },
     {
-      "title": "Animal House",
-      "rating": "9",
+      "title": "Petes Dragon",
+      "rating": "4",
       "id": 3
     },
     {
-      "title": "Animal House",
-      "rating": "9",
+      "title": "Hot Tub Time Machine",
+      "rating": "7",
       "id": 4
+    },
+    {
+      "title": "Super Troopers",
+      "rating": "7",
+      "id": 5
+    },
+    {
+      "title": "Avengers Endgame",
+      "rating": "9",
+      "id": 6
+    },
+    {
+      "title": "Batman vs Superman: Dawn of Justice",
+      "rating": "7",
+      "id": 7
+    },
+    {
+      "title": "Halfbaked",
+      "rating": "10",
+      "id": 8
     }
   ]
 }

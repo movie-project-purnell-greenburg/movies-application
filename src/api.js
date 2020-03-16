@@ -1,40 +1,41 @@
-
 module.exports = {
   getMovies: () => {
     return fetch('/api/movies')
-      .then(response => response.json());
-  },
-  postMovie: (newMovie) => {
-    return fetch('api/movies', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newMovie)
-    })
         .then(response => response.json());
   },
-  editMovie: (id, book) => {
-    return fetch(`api/movies/${id}`, {
-      method: 'PATCH',
+  addMovie: (movie) => {
+    const options = {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "content-type": "application/json"
       },
-      body: json.stringify(book)
-    })
-        .then(response => resopnse.json());
+      body: JSON.stringify(movie)
+    };
+    console.log(movie);
+    return fetch('/api/movies', options)
+        .then(response => response.json())
   },
-  deleteMovie: (id) => {// a delete is final so we want a confirm
-    return fetch(`api/movies/${id}`, {
-      method: 'DELETE',
+  deleteMovie: (movie, id) => {
+    const options = {
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-        .then(response => response.json());
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(movie)
+    };
+    console.log(movie);
+    return fetch(`/api/movies/${id}`, options)
+  },
+  editMovie: (movie, id) => {
+    const options = {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(movie)
+    };
+    console.log(movie);
+    return fetch(`/api/movies/${id}`, options)
   }
 };
-
-
-// OMDB API Call variables
 
