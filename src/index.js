@@ -41,6 +41,7 @@ $("#titleSearch").keyup(function () { // This is watching the text input for aut
 
           $('.listingItemContainer').on('click', function () {
               var imdbLink = $(this).attr("id"); // This grabs the internet movie databse ID so we can plug it into a new URL for a detailed search.
+              console.log(imdbLink);
               $('#autocompleteWrapper').remove(); // removes the autocomplete div
               // < open add movie confirm>
               addMovieModal(imdbLink); // sends the new URL element to be added to the local database
@@ -84,10 +85,10 @@ const addMovieModal = (imdbData) => {
             <p> Runtime: ${d.Runtime}</p>
             </div>
             <a href="#" rel="modal:close"><button>Cancel</button></a>
-            <a id="addMovieButton" rel="modal:close" style="float:right"><button>ADD MOVIE</button></a>
+            <a id="addMovieButton" rel="modal:close" style="text-align:right;"><button>ADD MOVIE</button></a>
             </div>`);
 
-            $('#addMovieButton').click(function () { // Add movie button clicked.
+            $('#addMovieButton').click(function () { // Add movie button when clicked.
                 // TODO: Start loader animation???
                 // verify movie is not in our local DB.
                 getMovies().then((movies) => {
