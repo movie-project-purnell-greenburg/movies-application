@@ -1,108 +1,131 @@
 {
   "movies": [
     {
-      "title": "Cool Hand Luke",
-      "year": "1967",
-      "rated": "GP",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.1/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "100%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "91/100"
-        }
-      ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BOWFlNzZhYmYtYTI5YS00MDQyLWIyNTUtNTRjMWUwNTEzNjA0XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "Stuart Rosenberg",
-      "actors": "Paul Newman, George Kennedy, J.D. Cannon, Lou Antonio",
-      "released": "01 Nov 1967",
-      "runtime": "127 min",
-      "imdbid": "tt0061512",
-      "id": 7
-    },
-    {
-      "title": "The Young Victoria",
-      "year": "2009",
+      "title": "Star Wars: Episode IV - A New Hope",
+      "year": "1977",
       "rated": "PG",
       "ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "7.3/10"
+          "Value": "8.6/10"
         },
         {
           "Source": "Rotten Tomatoes",
-          "Value": "76%"
+          "Value": "92%"
         },
         {
           "Source": "Metacritic",
-          "Value": "64/100"
+          "Value": "90/100"
         }
       ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMTM4MjExMDk3NV5BMl5BanBnXkFtZTcwMTU3OTMwMw@@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "Jean-Marc Vallée",
-      "actors": "Emily Blunt, Rupert Friend, Paul Bettany, Miranda Richardson",
-      "released": "08 Jan 2010",
-      "runtime": "105 min",
-      "imdbid": "tt0962736",
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "George Lucas",
+      "actors": "Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing",
+      "released": "25 May 1977",
+      "runtime": "121 min",
+      "imdbid": "tt0076759",
+      "plot": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
       "id": 8
     },
     {
-      "title": "Pokémon: The First Movie - Mewtwo Strikes Back",
-      "year": "1998",
-      "rated": "G",
+      "title": "Star Trek",
+      "year": "2009",
+      "rated": "PG-13",
       "ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "6.3/10"
+          "Value": "7.9/10"
         },
         {
           "Source": "Rotten Tomatoes",
-          "Value": "15%"
+          "Value": "94%"
         },
         {
           "Source": "Metacritic",
-          "Value": "35/100"
+          "Value": "82/100"
         }
       ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BN2NkZjA0OWUtZDgyMy00MjIxLWJhZTEtYjdmYzVjZTQ3YWRiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "Kunihiko Yuyama, Michael Haigney",
-      "actors": "Veronica Taylor, Jay Goede, Rachael Lillis, Eric Stuart",
-      "released": "10 Nov 1999",
-      "runtime": "96 min",
-      "imdbid": "tt0190641",
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "J.J. Abrams",
+      "actors": "Chris Pine, Zachary Quinto, Leonard Nimoy, Eric Bana",
+      "released": "08 May 2009",
+      "runtime": "127 min",
+      "imdbid": "tt0796366",
+      "plot": "The brash James T. Kirk tries to live up to his father's legacy with Mr. Spock keeping him in check as a vengeful Romulan from the future creates black holes to destroy the Federation one planet at a time.",
       "id": 9
     },
     {
-      "title": "Pokémon: The First Movie - Mewtwo Strikes Back",
-      "year": "1998",
-      "rated": "G",
+      "title": "Fred and Barney Meet the Thing",
+      "year": "1979",
+      "rated": "N/A",
       "ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "6.3/10"
+          "Value": "6.1/10"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMDQzYmJiZDctMDY0OS00NGE4LWIzNjMtOThjNDM2ZmZiODUxXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "N/A",
+      "actors": "Joe Baker, John Erwin, Art Metrano, Wayne Morton",
+      "released": "08 Sep 1979",
+      "runtime": "60 min",
+      "imdbid": "tt0298650",
+      "plot": "A show featuring two different cartoon segments,The New Fred and Barney Show (a revival of The Flintstones) and The Thing (based on the Marvel Comics superhero).",
+      "id": 10
+    },
+    {
+      "title": "Star Trek",
+      "year": "2009",
+      "rated": "PG-13",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.9/10"
         },
         {
           "Source": "Rotten Tomatoes",
-          "Value": "15%"
+          "Value": "94%"
         },
         {
           "Source": "Metacritic",
-          "Value": "35/100"
+          "Value": "82/100"
         }
       ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BN2NkZjA0OWUtZDgyMy00MjIxLWJhZTEtYjdmYzVjZTQ3YWRiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "Kunihiko Yuyama, Michael Haigney",
-      "actors": "Veronica Taylor, Jay Goede, Rachael Lillis, Eric Stuart",
-      "released": "10 Nov 1999",
-      "runtime": "96 min",
-      "imdbid": "tt0190641",
-      "id": 10
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "J.J. Abrams",
+      "actors": "Chris Pine, Zachary Quinto, Leonard Nimoy, Eric Bana",
+      "released": "08 May 2009",
+      "runtime": "127 min",
+      "imdbid": "tt0796366",
+      "plot": "The brash James T. Kirk tries to live up to his father's legacy with Mr. Spock keeping him in check as a vengeful Romulan from the future creates black holes to destroy the Federation one planet at a time.",
+      "id": 11
+    },
+    {
+      "title": "Presenting Princess Shaw",
+      "year": "2015",
+      "rated": "Not Rated",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.8/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "91%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "77/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMjM0ODYyODI0Nl5BMl5BanBnXkFtZTgwMjU2MjMyODE@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Ido Haar",
+      "actors": "Kutiman, Samantha Montgomery",
+      "released": "27 May 2016",
+      "runtime": "83 min",
+      "imdbid": "tt4161074",
+      "plot": "A documentary on the collaborative relationship between New Orleans based songwriter/YouTube star Samantha Montgomery and composer/video artist Ophir Kutiel.",
+      "id": 12
     }
   ]
 }

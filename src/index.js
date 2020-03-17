@@ -6,28 +6,64 @@ const {postMovie} = require('./api.js');
 const {editMovie} = require('./api.js');
 const {deleteMovie} = require('./api.js');
 
-
-
+$(document).ready(()=>{
+   loadGallery();
+});
 
 
 // Query movies from local DB and displays them
-    getMovies().then((movies) => {
+const loadGallery = () => {
+   $('#catalogue').empty();
+    getMovies()
+        .then((movies) => {
         // Loads catalogue
         movies.forEach(({title, id, poster}) => {
             // console.log(`id#${id} - ${title} - rating: ${rating}`);
             $("#catalogue").append(` <div class="movie-block" id="${id}">  ${poster} <br> ${title}</div>   `);
         });
 
-        $('.movie-block').click(function() { // grabs the local db ID of the movie clicked
-            console.log(this.id);
-        });
+            $('.movie-block').click(function() { // grabs the local db ID of the movie clicked
+                var localID = $(this).attr("id");
+                $("#galleryView").modal({
+                    fadeDuration: 100},
+                );
+                getMovies().then((movies)=>{
+                    // console.log(movies);
+                    movies.forEach(({id, poster, plot,title,year,rated,ratings,director,actors,released,runtime})=> {
+                        if( parseInt(localID) === id ){
+                            console.log("match");
+                            $('#galleryView').append(`<h2 style="display:inline">${title}</h2>
+<div style="font-weight:lighter; display:inline; float:right;">${year} | ${rated} | ${ratings[0].Value}</div><hr>
+            <div class="parent">
+            <div class="div1"> ${poster} </div>
+            <div class="div2">  </div>
+            <div class="div3">
+            <p>${plot}</p>
+            <p> Director: ${director}</p>
+            <p> Actors: ${actors}</p>
+            <p> Release Date: ${released}</p>
+            <p> Runtime: ${runtime}</p>
+            </div>`)
+                        }
+                    })
+                });
+            });
 
-
-
-    }).catch((error) => {
-        alert('Oh no! Something went wrong.\nCheck the console for details.');
+        })
+        .catch((error) => {
+        // alert('Oh no! Something went wrong.\nCheck the console for details.');
         console.log(error);
-    });
+        });
+};
+
+
+
+
+
+
+
+
+
 
 
 
@@ -37,6 +73,7 @@ const {deleteMovie} = require('./api.js');
 $("#titleSearch").keyup(function () { // This is watching the text input for autocomplete
   var keyPress = this.value;
     console.log(keyPress);
+
     // This literally triggers an API search every keypress
   $('#searchInput').append('<ul id="autocompleteWrapper"></ul>\n');
     $('#autocompleteWrapper').focusout(() => { // removes search results with the input box loses focus
@@ -78,6 +115,7 @@ $("#titleSearch").keyup(function () { // This is watching the text input for aut
 // const mainMovieModal
 
 
+
 const addMovieModal = (imdbData) => { // opens a modal with all data pulled from OMDB
     let searchLink = "http://www.omdbapi.com/?apikey=1b3199ec&i=" + imdbData;
     // the Modal pop up is triggered by html <a> tags and a jquery plugin so we just have to code for
@@ -96,7 +134,8 @@ const addMovieModal = (imdbData) => { // opens a modal with all data pulled from
                 actors: d.Actors,
                 released: d.Released,
                 runtime: d.Runtime,
-                imdbid: d.imdbID
+                imdbid: d.imdbID,
+                plot: d.Plot
             };
 
             // This renders the modal
@@ -120,23 +159,42 @@ const addMovieModal = (imdbData) => { // opens a modal with all data pulled from
                 // TODO: Start loader animation???
                 // verify movie is not in our local DB.
                 getMovies().then((movies) => {
-                    movies.forEach(({imdbid})=> {
-                        if(imdbid === d.imdbID){ // This checks if the new movie is already in our collection.
+                    var stopped = false;
+                    for(let {imdbid} of movies ) {
+                        if (imdbid === d.imdbID) { // This checks if the new movie is already in our collection.
                             //TODO: add modal alert "This movie already here!"
                             console.log('already added');
-                            return false;
-                        } else {
-                            console.log("this has not been added");
-                            postMovie(newMovieBucket); // Adds new movie to local DB.
+                            stopped = true;
+                            break;
                         }
-                    })
-                });
-
-
+                    }
+                    if (!stopped){
+                        console.log("this has not been added");
+                    postMovie(newMovieBucket); // Adds new movie to local DB.
+                    loadGallery();
+                    }
+                })
+            });
                 // then go to page display of movie ??
-            })
-        })     // todo: loading complete, kill loading animation here
+        })
+    };     // todo: loading complete, kill loading animation here
 
-};
 
+// admin options.. just delete function for now
+$('#admin-button').on('click', ()=>{
+    $('#admin-options').modal({
+        fadeDuration: 1000,
+        fadeDelay: 0.20
+    });
+    getMovies().then((movies) => {
+        // Loads catalogue
+        movies.forEach(({title, id, poster}) => {
+            // console.log(`id#${id} - ${title} - rating: ${rating}`);
+            $("#admin-options").append(` <div class="movie-block" id="${id}">   ${title} </div> <br>  `);
+            // $('')
+
+        });
+    });
+
+});
 
