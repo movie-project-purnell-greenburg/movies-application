@@ -8,22 +8,43 @@ const {deleteMovie} = require('./api.js');
 
 
 
-getMovies().then((movies) => { // Query movies from local DB
-  movies.forEach(({title, rating, id}) => {
-    // console.log(`id#${id} - ${title} - rating: ${rating}`);
-    $("#movieList").append(` </br>  id#${id} - ${title} - rating: ${rating}   `);
 
-  })
-}).catch((error) => {
-  alert('Oh no! Something went wrong.\nCheck the console for details.');
-  console.log(error);
-});
+
+// Query movies from local DB and displays them
+    getMovies().then((movies) => {
+        // Loads catalogue
+        movies.forEach(({title, id, poster}) => {
+            // console.log(`id#${id} - ${title} - rating: ${rating}`);
+            $("#catalogue").append(` <div class="movie-block" id="${id}">  ${poster} <br> ${title}</div>   `);
+        });
+
+        $('.movie-block').click(function() { // grabs the local db ID of the movie clicked
+            console.log(this.id);
+        });
+
+
+
+    }).catch((error) => {
+        alert('Oh no! Something went wrong.\nCheck the console for details.');
+        console.log(error);
+    });
+
+
+
 
 
 // This is the autocomplete for searching movies. Onve the movie is found in the IMDb the data is sent to our local DB
 $("#titleSearch").keyup(function () { // This is watching the text input for autocomplete
-  var keyPress = this.value;          // This literally triggers an API search every keypress
-  $('#searchInput').append('<div id="autocompleteWrapper"></div>\n')
+  var keyPress = this.value;
+    console.log(keyPress);
+    // This literally triggers an API search every keypress
+  $('#searchInput').append('<ul id="autocompleteWrapper"></ul>\n');
+    $('#autocompleteWrapper').focusout(() => { // removes search results with the input box loses focus
+        $(this).empty();
+    });
+    if(keyPress === "" ){ // if the search input is empty, user hits delete or whatever, the listings are removed.
+        $('#autocompleteWrapper').empty();
+    }
   var url = "http://www.omdbapi.com/?apikey=1b3199ec&s=" + keyPress;
   $.get(url)
       .done(function (data) {
@@ -32,10 +53,10 @@ $("#titleSearch").keyup(function () { // This is watching the text input for aut
         results.forEach(({Title, Poster, imdbID}) => {
             var displayPoster = `<img class="moviePoster" style="" src="${Poster}">`; // display poster in autocomplete
             if(Poster === "N/A"){
-                displayPoster = `<div class="noPoster"><small>No Poster Available</small></div>`; // some movies return "N/A" for poster this handles that
+                displayPoster = `<div class="noPoster"><small>N/A</small></div>`; // some movies return "N/A" for poster this handles that
             } // now the fetch has gotten our data. Time to dump it in this bucket.
-            movieList.push(`<a href="#movieDetails" rel="modal:open" class="listingItemContainer" id="${imdbID}"> ${displayPoster} 
-                            <div class="titleTextList"> ${Title} </div> </a>`);
+            movieList.push(`<li> <a href="#movieDetails" rel="modal:open" class="listingItemContainer" id="${imdbID}">${displayPoster} 
+                            <div class="titleTextList"> ${Title} </div> </a> </li><br> `);
         });
           $('#autocompleteWrapper').html(movieList); // This renders the autocomplete DIV with the results
 
@@ -47,10 +68,17 @@ $("#titleSearch").keyup(function () { // This is watching the text input for aut
               addMovieModal(imdbLink); // sends the new URL element to be added to the local database
           })
       })
+      .catch((onerror)=>{
+          $('#autocompleteWrapper').empty();
+      })
 });
 
 
-const addMovieModal = (imdbData) => {
+
+const mainMovieModal
+
+
+const addMovieModal = (imdbData) => { // opens a modal with all data pulled from OMDB
     let searchLink = "http://www.omdbapi.com/?apikey=1b3199ec&i=" + imdbData;
     // the Modal pop up is triggered by html <a> tags and a jquery plugin so we just have to code for
     // confirmation and error handeling.
@@ -110,6 +138,5 @@ const addMovieModal = (imdbData) => {
         })     // todo: loading complete, kill loading animation here
 
 };
-
 
 

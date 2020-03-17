@@ -14,13 +14,13 @@ module.exports = {
     })
         .then(response => response.json());
   },
-  editMovie: (id, book) => {
+  editMovie: (id, movie) => {
     return fetch(`api/movies/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: json.stringify(book)
+      body: json.stringify(movie)
     })
         .then(response => resopnse.json());
   },

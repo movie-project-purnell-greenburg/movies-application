@@ -2,28 +2,49 @@
 
 * {
   font-family:'Roboto', sans-serif;
-
+box-sizing:border-box;
 }
-
+ul {
+  list-style:none;
+}
 .titleTextList {
   display:inline;
   align-content:center;
   padding:1em;
 }
-
+#autocompleteWrapper {
+  position: absolute;
+  background:white;
+margin:0;
+  padding:0;
+}
+.listingItemContainer {
+  display: block;
+  float: left;
+  padding: 0;
+  position: relative;
+  z-index:20;
+}
 .autocompleteResults {
-  padding:2px;
-  border:darkgray 1px solid;
-  z-index:3;
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
 }
 
 .moviePoster {
-  max-width:50px;
+
+  max-width:30px;
 }
 
 .noPoster {
   background-color:lightgrey;
-  max-width:50px;
+  max-width:30px;
   text-align:center;
 }
 
@@ -40,6 +61,8 @@
   background:lightskyblue;
 }
 
+
+
 /*Movie Details Grid*/
 .parent {
   display: grid;
@@ -52,6 +75,18 @@
 .div1 { grid-area: 1 / 1 / 2 / 2; }
 .div2 { grid-area: 2 / 1 / 3 / 2; }
 .div3 { grid-area: 1 / 2 / 3 / 3; }
+
+#catalogue {
+  display:flex;
+  flex-wrap:wrap;
+}
+.movie-block {
+  transition:opacity 0.5s;
+  margin:5px;
+}
+.movie-block:hover{
+  opacity:50%;
+}
 
 /*end movie details grid*/
 
