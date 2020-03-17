@@ -75,7 +75,7 @@ $("#titleSearch").keyup(function () { // This is watching the text input for aut
 
 
 
-const mainMovieModal
+// const mainMovieModal
 
 
 const addMovieModal = (imdbData) => { // opens a modal with all data pulled from OMDB
