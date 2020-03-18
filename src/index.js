@@ -1,7 +1,6 @@
 var $ = require("jquery");
 require("jquery-modal");
 
-
 const {getMovies} = require('./api.js');
 const {postMovie} = require('./api.js');
 const {editMovie} = require('./api.js');
@@ -15,11 +14,11 @@ $(document).ready(() => {
 
 // Query movies from local DB and displays them
 const loadGallery = () => {
-    $('#catalogue').empty();
+
 
     getMovies()
         .then((movies) => {
-
+            $("#catalogue").empty();
             // Loads catalogue
             movies.forEach(({title, id, poster}) => {
                 // console.log(`id#${id} - ${title} - rating: ${rating}`);
@@ -27,18 +26,24 @@ const loadGallery = () => {
             });
 
             $('.movie-block').click(function () { // grabs the local db ID of the movie clicked
-                var localID = $(this).attr("id");
-                $("#galleryView").empty().modal({
+                let localID = "";
+
+                localID = $(this).attr("id");
+                $("#galleryView").modal({
                         fadeDuration: 100
                     },
                 );
+
                 getMovies().then((movies) => {
                     // console.log(movies);
+                    $('.loader').remove();
+
                     movies.forEach(({id, poster, plot, title, year, rated, ratings, director, actors, released, runtime}) => {
                         if (parseInt(localID) === id) {
-                            $('#galleryView').append(`<h2 class="editable">${title}</h2><div style="font-weight:lighter; display:inline; float:right;">${year} | ${rated} | ${ratings[0].Value}</div><hr>
+                            $('#galleryView').empty().append(`<h2>${title}</h2><div style="font-weight:lighter; display:inline; float:right;">${year} | ${rated} | ${ratings[0].Value}</div><hr>
                                                         <div class="parent">
-                                                        <div class="div1"> ${poster} </div>
+                                                        <div class="div1"> ${poster} <br>             
+                                                        <a id="editMovieButton" rel="modal:close" style="text-align:right;"><button>Edit</button></a></div>
                                                         <div class="div2">  </div>
                                                         <div class="div3">
                                                         <p>${plot}</p>
@@ -47,9 +52,11 @@ const loadGallery = () => {
                                                         <p> Release Date: ${released}</p>
                                                         <p> Runtime: ${runtime}</p>
                                                         </div>`)
+                                .focusout(function () {
+                                    $(this).empty();
+                            });
                         }
                     });
-                inlineEdit();
                 });
             });
         })
@@ -58,7 +65,6 @@ const loadGallery = () => {
             console.log(error);
         });
 };
-
 
 // This is the autocomplete for searching movies. Onve the movie is found in the IMDb the data is sent to our local DB
 $("#titleSearch").keyup(function () { // This is watching the text input for autocomplete
@@ -206,38 +212,5 @@ const deleteConfirm = (id) => {
     })
 };
 
-const inlineEdit = () => {
-    $(document).ready(function () {
-        $('.editable').on('click', function () {
-            var that = $(this);
-            console.log(that + " was clicked");
-            if (that.find('input').length > 0) {
-                return;
-            }
-            var currentText = that.text();
 
-            var $input = $('<input>').val(currentText)
-                .css({
-                    'position': 'absolute',
-                    top: '0px',
-                    left: '0px',
-                    width: that.width(),
-                    height: that.height(),
-                    opacity: 0.9,
-                    padding: '10px'
-                });
 
-            $(this).append($input);
-
-            // Handle outside click
-            $(document).click(function (event) {
-                if (!$(event.target).closest('.editable').length) {
-                    if ($input.val()) {
-                        that.text($input.val());
-                    }
-                    that.find('input').remove();
-                }
-            });
-        });
-    })
-};

@@ -15,6 +15,7 @@ module.exports = {
         .then(response => response.json());
   },
   editMovie: (id, movie) => {
+    console.log("Editing movie data for " + movie.title);
     return fetch(`api/movies/${id}`, {
       method: 'PATCH',
       headers: {

@@ -163,25 +163,6 @@
       "id": 18
     },
     {
-      "title": "Something the Lord Made",
-      "year": "2004",
-      "rated": "TV-PG",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.2/10"
-        }
-      ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMTIzNTE0NjU4N15BMl5BanBnXkFtZTcwNjgyNDcyMQ@@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "Joseph Sargent",
-      "actors": "Alan Rickman, Yasiin Bey, Kyra Sedgwick, Gabrielle Union",
-      "released": "30 May 2004",
-      "runtime": "110 min",
-      "imdbid": "tt0386792",
-      "plot": "A dramatization of the relationship between heart surgery pioneers Alfred Blalock and Vivien Thomas.",
-      "id": 19
-    },
-    {
       "title": "National Lampoon's Animal House",
       "year": "1978",
       "rated": "R",

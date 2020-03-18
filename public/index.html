@@ -17,28 +17,32 @@
         <input class="autocomplete" id="titleSearch" type="text" placeholder="Search by Title">
     </div>
 </div>
-
-
-<div id="catalogue"></div>
+<div id="catalogue"><img class="loader" src="./loading.svg" alt="">
+</div>
 
 
 <!-- Modal for adding movie -->
 <!--    if something goes wrong you will see the text below. -->
-<div id="movieDetails" class="modal">
+<div id="movieDetails" class="modal"><img class="loader" src="./loading.svg" alt="">
     <p>Thanks for clicking. That felt good.</p>
 </div>
 
 
-<div id="galleryView" class="modal">
+<div id="galleryView" class="modal"><img class="loader" src="./loading.svg" alt="">
     <p>Movie Details</p>
 </div>
-<div id="dialog" class="modal">
+<div id="dialog" class="modal"></div>
+
+<div id="editorView" class="modal">
+    <p>Movie Editor</p>
+</div>
+<div id="dialog" class="modal"></div>
 
     <!-- Modal HTML embedded directly into document -->
-    <div id="admin-options" class="modal">
+    <div id="admin-options" class="modal"><img class="loader" src="./loading.svg" alt="">
     </div>
+<!--edit-->
 
-    <!-- Link to open the modal -->
 
 
     <script src="./main.js"></script>
