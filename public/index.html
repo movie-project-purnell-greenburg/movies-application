@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8"/>
     <title>My Application</title>
-    <link type="text/html" rel="stylesheet" href="../node_modules/nes.css"/>
-    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />-->
+<!--    <link type="text/html" rel="stylesheet" href="../node_modules/nes.css"/>-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+
 <div id="main-wrapper">
-<h2>Moviepedia</h2>
-<p>Title Search:</p>    <a id="admin-button" href="#">Admin</a>
+    <a id="admin-button" href="#">Admin</a>
+    <p id="box">MOVIEPEDIA <br>Brian Purnell & Michael Greenburg</p>
+    <h1 class="text-flicker-in-glow">Moviepedia</h1>
+
+<!--    <form id="content">-->
+<!--        <input type="text" name="input" class="input" id="search-input">-->
+<!--        <button type="reset" class="search" id="search-btn"></button>-->
+<!--    </form>-->
 
 <div id="search-group">
     <div id="searchInput" style="width:300px;">
-        <input class="autocomplete" id="titleSearch" type="text" placeholder="Search by Title">
+        <input class="autocomplete shadow-inset-lr" id="titleSearch" type="text" placeholder="Search by Title" autocomplete="off">
     </div>
 </div>
 <div id="catalogue"><img class="loader" src="./loading.svg" alt="">
