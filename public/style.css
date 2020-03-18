@@ -12,12 +12,34 @@ ul {
   align-content:center;
   padding:1em;
 }
+.editable {
+  position: relative;
+  padding: 10px;
+  border-left:lightgrey 1px solid;
+
+}
+div {
+
+  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.5s; /* Firefox < 16 */
+  -ms-animation: fadein 0.5s; /* Internet Explorer */
+  -o-animation: fadein 0.5s; /* Opera < 12.1 */
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 #autocompleteWrapper {
   position: absolute;
   background:white;
-margin:0;
+  margin:0;
   padding:0;
-}
+  z-index:98;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);}
 .listingItemContainer {
   display: block;
   float: left;
@@ -27,11 +49,12 @@ margin:0;
 }
 .autocompleteResults {
   position: absolute;
+  display:block;
   border: 1px solid #d4d4d4;
   border-bottom: none;
   border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
+
   top: 100%;
   left: 0;
   right: 0;
@@ -81,13 +104,42 @@ margin:0;
   flex-wrap:wrap;
 }
 .movie-block {
-  transition:opacity 0.5s;
+  position:relative;
+  transition:color 0.5s;
   margin:5px;
+justify-content:center;
 }
-.movie-block:hover{
-  opacity:50%;
-}
+.movie-block:hover {
+  cursor: pointer;
 
+}
+.movie-block:hover > .poster-text{
+  color:white;
+  background:black  ;
+  transition:1s;
+
+}
+.poster-text {
+  width:border-box;
+  height:auto;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin:5px;
+  padding: 5px;
+  background-color: white;
+  opacity: 0.5;
+  /*filter: alpha(opacity=30);*/
+  /*border: 2px solid red;*/
+  /*-webkit-filter: invert(100%);*/
+  color:black;
+  /*mix-blend-mode: difference;*/
+border-radius:5px;
+  font-size: 1em;
+  text-align:center;
+  /*color:lightgrey;*/
+  /*text-shadow: 1px 1px 0px #434343;*/
+}
 /*end movie details grid*/
 
 .blocker {

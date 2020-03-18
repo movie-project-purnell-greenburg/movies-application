@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>My Application</title>
-    <link type="text/html" rel="stylesheet" href="../node_modules/nes.css" />
-<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />-->
+    <link type="text/html" rel="stylesheet" href="../node_modules/nes.css"/>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />-->
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <h2>Moviepedia</h2>
-    <p>Title Search:</p>
-<div id="searchInput" style="width:300px;">
-    <input class="autocomplete" id="titleSearch" type="text" placeholder="Search by Title">
+<h2>Moviepedia</h2>
+<p>Title Search:</p>    <a id="admin-button" href="#">Admin</a>
+
+<div id="search-group">
+    <div id="searchInput" style="width:300px;">
+        <input class="autocomplete" id="titleSearch" type="text" placeholder="Search by Title">
+    </div>
 </div>
 
 
-    <div id="catalogue"></div>
+<div id="catalogue"></div>
 
 
-
-    <!-- Modal for adding movie -->
+<!-- Modal for adding movie -->
 <!--    if something goes wrong you will see the text below. -->
-    <div id="movieDetails" class="modal">
-        <p>Thanks for clicking. That felt good.</p>
-    </div>
+<div id="movieDetails" class="modal">
+    <p>Thanks for clicking. That felt good.</p>
+</div>
 
 
-    <div id="galleryView" class="modal">
-        <p>Movie Details</p>
-    </div>
-
+<div id="galleryView" class="modal">
+    <p>Movie Details</p>
+</div>
+<div id="dialog" class="modal">
 
     <!-- Modal HTML embedded directly into document -->
     <div id="admin-options" class="modal">
-        <p>admin options</p>
-        <a href="#" rel="modal:close">Close</a>
     </div>
 
     <!-- Link to open the modal -->
-    <a id="admin-button" href="#" >Admin</a>
 
 
     <script src="./main.js"></script>

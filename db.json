@@ -1,79 +1,6 @@
 {
   "movies": [
     {
-      "title": "Star Wars: Episode IV - A New Hope",
-      "year": "1977",
-      "rated": "PG",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "8.6/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "92%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "90/100"
-        }
-      ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "George Lucas",
-      "actors": "Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing",
-      "released": "25 May 1977",
-      "runtime": "121 min",
-      "imdbid": "tt0076759",
-      "plot": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
-      "id": 8
-    },
-    {
-      "title": "Star Trek",
-      "year": "2009",
-      "rated": "PG-13",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "7.9/10"
-        },
-        {
-          "Source": "Rotten Tomatoes",
-          "Value": "94%"
-        },
-        {
-          "Source": "Metacritic",
-          "Value": "82/100"
-        }
-      ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "J.J. Abrams",
-      "actors": "Chris Pine, Zachary Quinto, Leonard Nimoy, Eric Bana",
-      "released": "08 May 2009",
-      "runtime": "127 min",
-      "imdbid": "tt0796366",
-      "plot": "The brash James T. Kirk tries to live up to his father's legacy with Mr. Spock keeping him in check as a vengeful Romulan from the future creates black holes to destroy the Federation one planet at a time.",
-      "id": 9
-    },
-    {
-      "title": "Fred and Barney Meet the Thing",
-      "year": "1979",
-      "rated": "N/A",
-      "ratings": [
-        {
-          "Source": "Internet Movie Database",
-          "Value": "6.1/10"
-        }
-      ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMDQzYmJiZDctMDY0OS00NGE4LWIzNjMtOThjNDM2ZmZiODUxXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "N/A",
-      "actors": "Joe Baker, John Erwin, Art Metrano, Wayne Morton",
-      "released": "08 Sep 1979",
-      "runtime": "60 min",
-      "imdbid": "tt0298650",
-      "plot": "A show featuring two different cartoon segments,The New Fred and Barney Show (a revival of The Flintstones) and The Thing (based on the Marvel Comics superhero).",
-      "id": 10
-    },
-    {
       "title": "Star Trek",
       "year": "2009",
       "rated": "PG-13",
@@ -101,13 +28,67 @@
       "id": 11
     },
     {
-      "title": "Presenting Princess Shaw",
-      "year": "2015",
-      "rated": "Not Rated",
+      "title": "Star Wars: Episode IV - A New Hope",
+      "year": "1977",
+      "rated": "PG",
       "ratings": [
         {
           "Source": "Internet Movie Database",
-          "Value": "6.8/10"
+          "Value": "8.6/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "92%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "90/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "George Lucas",
+      "actors": "Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing",
+      "released": "25 May 1977",
+      "runtime": "121 min",
+      "imdbid": "tt0076759",
+      "plot": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
+      "id": 12
+    },
+    {
+      "title": "Star Wars: Episode VII - The Force Awakens",
+      "year": "2015",
+      "rated": "PG-13",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.9/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "93%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "81/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "J.J. Abrams",
+      "actors": "Harrison Ford, Mark Hamill, Carrie Fisher, Adam Driver",
+      "released": "18 Dec 2015",
+      "runtime": "138 min",
+      "imdbid": "tt2488496",
+      "plot": "Three decades after the Empire's defeat, a new threat arises in the militant First Order. Defected stormtrooper Finn and the scavenger Rey are caught up in the Resistance's search for the missing Luke Skywalker.",
+      "id": 14
+    },
+    {
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": "2001",
+      "rated": "PG-13",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.8/10"
         },
         {
           "Source": "Rotten Tomatoes",
@@ -115,17 +96,298 @@
         },
         {
           "Source": "Metacritic",
-          "Value": "77/100"
+          "Value": "92/100"
         }
       ],
-      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMjM0ODYyODI0Nl5BMl5BanBnXkFtZTgwMjU2MjMyODE@._V1_SX300.jpg\" alt='Movie Poster' >",
-      "director": "Ido Haar",
-      "actors": "Kutiman, Samantha Montgomery",
-      "released": "27 May 2016",
-      "runtime": "83 min",
-      "imdbid": "tt4161074",
-      "plot": "A documentary on the collaborative relationship between New Orleans based songwriter/YouTube star Samantha Montgomery and composer/video artist Ophir Kutiel.",
-      "id": 12
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Peter Jackson",
+      "actors": "Alan Howard, Noel Appleby, Sean Astin, Sala Baker",
+      "released": "19 Dec 2001",
+      "runtime": "178 min",
+      "imdbid": "tt0120737",
+      "plot": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+      "id": 15
+    },
+    {
+      "title": "The Lord of the Rings: The Return of the King",
+      "year": "2003",
+      "rated": "PG-13",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.9/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "93%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "94/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Peter Jackson",
+      "actors": "Noel Appleby, Ali Astin, Sean Astin, David Aston",
+      "released": "17 Dec 2003",
+      "runtime": "201 min",
+      "imdbid": "tt0167260",
+      "plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+      "id": 16
+    },
+    {
+      "title": "Lord of the Flies",
+      "year": "1963",
+      "rated": "Not Rated",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.9/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "91%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "67/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Peter Brook",
+      "actors": "James Aubrey, Tom Chapin, Hugh Edwards, Roger Elwin",
+      "released": "13 Aug 1963",
+      "runtime": "92 min",
+      "imdbid": "tt0057261",
+      "plot": "Lost on an island, young survivors of a plane crash eventually revert to savagery despite the few rational boys' attempts to prevent that.",
+      "id": 18
+    },
+    {
+      "title": "Something the Lord Made",
+      "year": "2004",
+      "rated": "TV-PG",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "8.2/10"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMTIzNTE0NjU4N15BMl5BanBnXkFtZTcwNjgyNDcyMQ@@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Joseph Sargent",
+      "actors": "Alan Rickman, Yasiin Bey, Kyra Sedgwick, Gabrielle Union",
+      "released": "30 May 2004",
+      "runtime": "110 min",
+      "imdbid": "tt0386792",
+      "plot": "A dramatization of the relationship between heart surgery pioneers Alfred Blalock and Vivien Thomas.",
+      "id": 19
+    },
+    {
+      "title": "National Lampoon's Animal House",
+      "year": "1978",
+      "rated": "R",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.5/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "90%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "79/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BM2M2ZDA4MTYtOGRjMi00OTg5LWI1ZTUtMjQxZTc2NWZjNDFkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "John Landis",
+      "actors": "Tom Hulce, Stephen Furst, Mark Metcalf, Mary Louise Weller",
+      "released": "28 Jul 1978",
+      "runtime": "109 min",
+      "imdbid": "tt0077975",
+      "plot": "At a 1962 college, Dean Vernon Wormer is determined to expel the entire Delta Tau Chi Fraternity, but those troublemakers have other plans for him.",
+      "id": 20
+    },
+    {
+      "title": "Men at Work",
+      "year": "2012–2014",
+      "rated": "TV-14",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "7.1/10"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BODc2ODE0NzI3MF5BMl5BanBnXkFtZTcwNjMxNDg3Nw@@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "N/A",
+      "actors": "Danny Masterson, Michael Cassidy, Adam Busch, James Lesure",
+      "released": "24 May 2012",
+      "runtime": "30 min",
+      "imdbid": "tt1942919",
+      "plot": "Comedy following the misadventures of four buddies who work together at a magazine.",
+      "id": 21
+    },
+    {
+      "title": "Weird Science",
+      "year": "1985",
+      "rated": "PG-13",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.6/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "56%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "46/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BMTEwMTU1YjMtMjc0OS00NjZiLTk1MGMtNzhkODI0ZDFjNGI2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "John Hughes",
+      "actors": "Anthony Michael Hall, Kelly LeBrock, Ilan Mitchell-Smith, Bill Paxton",
+      "released": "02 Aug 1985",
+      "runtime": "94 min",
+      "imdbid": "tt0090305",
+      "plot": "Two high school nerds use a computer program to literally create the perfect woman, but she turns their lives upside down.",
+      "id": 23
+    },
+    {
+      "title": "Bedazzled",
+      "year": "2000",
+      "rated": "PG-13",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.0/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "49%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "49/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BODgxOTg5OGUtOWViMC00NjM5LWEyMTQtN2M4NTBjYWUzOWUzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Harold Ramis",
+      "actors": "Brendan Fraser, Elizabeth Hurley, Frances O'Connor, Miriam Shor",
+      "released": "20 Oct 2000",
+      "runtime": "93 min",
+      "imdbid": "tt0230030",
+      "plot": "Hopeless dweeb Elliot Richards is granted seven wishes by the Devil to snare Allison, the girl of his dreams, in exchange for his soul.",
+      "id": 24
+    },
+    {
+      "title": "Friday the 13th",
+      "year": "1980",
+      "rated": "R",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.5/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "62%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "22/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Sean S. Cunningham",
+      "actors": "Betsy Palmer, Adrienne King, Jeannine Taylor, Robbi Morgan",
+      "released": "09 May 1980",
+      "runtime": "95 min",
+      "imdbid": "tt0080761",
+      "plot": "A group of camp counselors are stalked and murdered by an unknown assailant while trying to reopen a summer camp where, years before, it was the site of a child's drowning and a grisly double murder.",
+      "id": 25
+    },
+    {
+      "title": "Friday the 13th: Part 2",
+      "year": "1981",
+      "rated": "R",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.1/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "28%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "26/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BYTZmMjk1ZjAtZjg0Yy00MWIyLWI5NmYtMThlYmU3NTc2NzdkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Steve Miner",
+      "actors": "Amy Steel, John Furey, Adrienne King, Kirsten Baker",
+      "released": "30 Apr 1981",
+      "runtime": "87 min",
+      "imdbid": "tt0082418",
+      "plot": "Mrs. Voorhees is dead, and Camp Crystal Lake is shut down, but a camp next to the infamous place is stalked by an unknown assailant.",
+      "id": 26
+    },
+    {
+      "title": "Friday the 13th Part III",
+      "year": "1982",
+      "rated": "R",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "5.7/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "12%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "30/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BZjRiMTdlY2QtZGE3YS00YjQzLTk5MmUtNjVjMjUzYWRiMWNhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Steve Miner",
+      "actors": "Terry Ballard, Richard Brooker, Gloria Charles, Rachel Howard",
+      "released": "13 Aug 1982",
+      "runtime": "95 min",
+      "imdbid": "tt0083972",
+      "plot": "Having revived from his wounds, Jason Voorhees takes refuge at a cabin near Crystal Lake. As a group of co-eds arrive for their vacation, Jason continues his killing spree.",
+      "id": 27
+    },
+    {
+      "title": "Friday the 13th: The Final Chapter",
+      "year": "1984",
+      "rated": "R",
+      "ratings": [
+        {
+          "Source": "Internet Movie Database",
+          "Value": "6.0/10"
+        },
+        {
+          "Source": "Rotten Tomatoes",
+          "Value": "20%"
+        },
+        {
+          "Source": "Metacritic",
+          "Value": "33/100"
+        }
+      ],
+      "poster": "<img src=https://m.media-amazon.com/images/M/MV5BYWE5YzI0YWItMzkyMi00ODgzLThjNTAtYzVlMmZjZDA2ZWFjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg\" alt='Movie Poster' >",
+      "director": "Joseph Zito",
+      "actors": "Judie Aronson, Peter Barton, Erich Anderson, Kimberly Beck",
+      "released": "13 Apr 1984",
+      "runtime": "91 min",
+      "imdbid": "tt0087298",
+      "plot": "After being mortally wounded and taken to the morgue, murderer Jason Voorhees spontaneously revives and embarks on a killing spree as he makes his way back to his home at Camp Crystal Lake.",
+      "id": 28
     }
   ]
 }
