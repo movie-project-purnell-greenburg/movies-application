@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<div id="main-wrapper">
 <h2>Moviepedia</h2>
 <p>Title Search:</p>    <a id="admin-button" href="#">Admin</a>
 
@@ -31,12 +32,21 @@
 <div id="galleryView" class="modal"><img class="loader" src="./loading.svg" alt="">
     <p>Movie Details</p>
 </div>
-<div id="dialog" class="modal"></div>
+<!--<div id="dialog" class="modal"></div>-->
 
 <div id="editorView" class="modal">
+    <form id="editForm">
+    <input type="text" name="title"/><br>
+    <textarea name="plot"></textarea><br>
+    <input type="text" name="ratings"/><br>
+        <button href="#" rel="modal:close" id="submitEdit" type="submit" value="Submit">Save</button>
+    </form>
     <p>Movie Editor</p>
 </div>
-<div id="dialog" class="modal"></div>
+
+
+
+<div id="dialog" class="modal">   </div>
 
     <!-- Modal HTML embedded directly into document -->
     <div id="admin-options" class="modal"><img class="loader" src="./loading.svg" alt="">
@@ -44,7 +54,7 @@
 <!--edit-->
 
 
-
+</div>
     <script src="./main.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@ module.exports = {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: json.stringify(movie)
+      body: JSON.stringify(movie)
     })
         .then(response => resopnse.json());
   },

@@ -33,17 +33,22 @@ const loadGallery = () => {
                         fadeDuration: 100
                     },
                 );
-
+                $('#detailedViewContainer').empty();
                 getMovies().then((movies) => {
-                    // console.log(movies);
-                    $('.loader').remove();
 
+
+
+
+
+                    $('.loader').remove();
                     movies.forEach(({id, poster, plot, title, year, rated, ratings, director, actors, released, runtime}) => {
+                        var formData = {"title":title, "plot": plot, "ratings": ratings};
+
                         if (parseInt(localID) === id) {
-                            $('#galleryView').empty().append(`<h2>${title}</h2><div style="font-weight:lighter; display:inline; float:right;">${year} | ${rated} | ${ratings[0].Value}</div><hr>
+                            $('#galleryView').append(`<div id="detailedViewContainer"><h2>${title}</h2><div style="font-weight:lighter; display:inline; float:right;">${year} | ${rated} | ${ratings}</div><hr>
                                                         <div class="parent">
                                                         <div class="div1"> ${poster} <br>             
-                                                        <a id="editMovieButton" rel="modal:close" style="text-align:right;"><button>Edit</button></a></div>
+                                                        <a id="editMovieButton" href="#" style="text-align:right;"><button>Edit</button></a></div>
                                                         <div class="div2">  </div>
                                                         <div class="div3">
                                                         <p>${plot}</p>
@@ -51,13 +56,36 @@ const loadGallery = () => {
                                                         <p> Actors: ${actors}</p>
                                                         <p> Release Date: ${released}</p>
                                                         <p> Runtime: ${runtime}</p>
-                                                        </div>`)
-                                .focusout(function () {
-                                    $(this).empty();
+                                                        </div></div>`);
+
+                            $('#editMovieButton').on('click', function () {
+                                //     $('#galleryView').remove();
+                                $('#editorView').modal();
+
+                                function populate(frm, data) {
+                                    $.each(data, function(key, value){
+                                        $('[name='+key+']', frm).val(value);
+                                    });
+                                }
+                                populate('#editorView', formData);
+                                $('#editForm').submit(function (event) {
+                                    var submitData = $( this ).serializeArray();
+                                    console.log(submitData);
+                                    event.preventDefault();
+                                    console.log(parseInt(id) + " = ID | " + serializeToJson(submitData));
+                                    editMovie(parseInt(id), serializeToJson(submitData));
+                                    location.reload(true)
+                                    // $('#editorView').css('display', 'none');
+
+                                });
                             });
+
+
                         }
                     });
+
                 });
+
             });
         })
         .catch((error) => {
@@ -66,16 +94,14 @@ const loadGallery = () => {
         });
 };
 
-// This is the autocomplete for searching movies. Onve the movie is found in the IMDb the data is sent to our local DB
+// This is the autocomplete for searching movies. Once the movie is found in the IMDb the data is sent to our local DB
 $("#titleSearch").keyup(function () { // This is watching the text input for autocomplete
     var keyPress = this.value;
-    console.log(keyPress);
-
     // This literally triggers an API search every keypress
     $('#searchInput').append('<ul id="autocompleteWrapper"></ul>\n');
-    $('#search-group').focusout(() => { // removes search results with the input box loses focus
-        $('#autocompleteWrapper').remove();
-    });
+    // $('#search-group').focusout(() => { // removes search results with the input box loses focus
+    //     $('#autocompleteWrapper').remove();
+    // });
     if (keyPress === "") { // if the search input is empty, user hits delete or whatever, the listings are removed.
         $('#autocompleteWrapper').empty();
     }
@@ -93,7 +119,6 @@ $("#titleSearch").keyup(function () { // This is watching the text input for aut
                             <div class="titleTextList"> ${Title} </div> </a> </li><br> `);
             });
             $('#autocompleteWrapper').html(movieList); // This renders the autocomplete DIV with the results
-
             $('.listingItemContainer').on('click', function () {
                 var imdbLink = $(this).attr("id"); // This grabs the internet movie databse ID so we can plug it into a new URL for a detailed search.
                 console.log(imdbLink);
@@ -107,10 +132,6 @@ $("#titleSearch").keyup(function () { // This is watching the text input for aut
         })
 });
 
-
-// const mainMovieModal
-
-
 const addMovieModal = (imdbData) => { // opens a modal with all data pulled from OMDB
     let searchLink = "http://www.omdbapi.com/?apikey=1b3199ec&i=" + imdbData;
     // the Modal pop up is triggered by html <a> tags and a jquery plugin so we just have to code for
@@ -119,11 +140,12 @@ const addMovieModal = (imdbData) => { // opens a modal with all data pulled from
     // pulls all omdb data and prepares it to be added locally using a bucket "newMovieBucket"
     $.get(searchLink)
         .done((d) => {
+            var oneRating = parseInt(d.Ratings[0].Value);
             var newMovieBucket = {
                 title: d.Title,
                 year: d.Year,
                 rated: d.Rated,
-                ratings: d.Ratings,
+                ratings: oneRating,
                 poster: "<img src=" + d.Poster + "\" alt='Movie Poster' >",
                 director: d.Director,
                 actors: d.Actors,
@@ -132,7 +154,6 @@ const addMovieModal = (imdbData) => { // opens a modal with all data pulled from
                 imdbid: d.imdbID,
                 plot: d.Plot
             };
-
             // This renders the modal
             $('#movieDetails').html(`<h2 style="display:inline">${d.Title}</h2> 
 <div style="font-weight:lighter; display:inline; float:right;">${d.Year} | ${d.Rated} | ${d.Ratings[0].Value}</div><hr>
@@ -149,7 +170,6 @@ const addMovieModal = (imdbData) => { // opens a modal with all data pulled from
             <a href="#" rel="modal:close"><button>Cancel</button></a>
             <a id="addMovieButton" rel="modal:close" style="text-align:right;"><button>ADD MOVIE</button></a>
             </div>`);
-
             $('#addMovieButton').click(function () { // Add movie button when clicked.
                 // TODO: Start loader animation???
                 // verify movie is not in our local DB.
@@ -174,7 +194,6 @@ const addMovieModal = (imdbData) => { // opens a modal with all data pulled from
         })
 };     // todo: loading complete, kill loading animation here
 
-
 // admin options.. just delete function for now
 const adminMenu = () => {
     $('#admin-button').on('click', () => {
@@ -195,8 +214,6 @@ const adminMenu = () => {
                 deleteConfirm(tempID);
             });
         })
-
-
     });
 };
 
@@ -212,5 +229,17 @@ const deleteConfirm = (id) => {
     })
 };
 
-
+// #############
+function serializeToJson(serializer){
+    var _string = '{';
+    for(var ix in serializer)
+    {
+        var row = serializer[ix];
+        _string += '"' + row.name + '":"' + row.value + '",';
+    }
+    var end =_string.length - 1;
+    _string = _string.substr(0, end);
+    _string += '}';
+    return JSON.parse(_string);
+}
 
